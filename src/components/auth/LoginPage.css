@@ -1,0 +1,10 @@
+.loginPage {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  margin: 1rem 0rem;
+}
+
+.loginPage-container {
+  width: 600px;
+}

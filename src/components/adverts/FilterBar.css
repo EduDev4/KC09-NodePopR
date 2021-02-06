@@ -1,0 +1,19 @@
+.filer-container-wrapper {
+  display: inline-block;
+  align-items: left;
+  text-align: left;
+  vertical-align: middle;
+  width: 50%;
+}
+.filer-container {
+  width: 100%;
+  padding: 1rem;
+  background: #e8fffc;
+}
+.submit {
+  margin-top: 1rem;
+}
+
+.filterRow {
+  margin-top: 1rem;
+}

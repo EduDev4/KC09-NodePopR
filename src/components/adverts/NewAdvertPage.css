@@ -1,0 +1,18 @@
+.formRow {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  margin: 1rem 0rem;
+}
+
+.form-wrapper {
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.form-container {
+  width: 600px;
+}
