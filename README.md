@@ -35,6 +35,8 @@ Run command to install dependencies
 
 - Set variables in a .env file following .env.example structure.
 
+---
+---
 
 # Getting Started with Create React App
 
