@@ -38,6 +38,5 @@ ReactDOM.render(
       <App initiallyLooggedUserId={auth.email} />
     </BrowserRouter>
   </ErrorBoundary>,
-
   document.getElementById('root'),
 );

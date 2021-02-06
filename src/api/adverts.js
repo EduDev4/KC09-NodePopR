@@ -27,7 +27,9 @@ export const getAdvertDetail = advertId => {
 
 export const createAdvert = advert => {
   const url = `${apiVersion}/adverts`;
-  return client.post(url, advert);
+  const resp = client.post(url, advert);
+  console.log(resp);
+  return resp;
 };
 
 export const deleteAdvert = advertId => {

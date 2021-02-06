@@ -4,3 +4,4 @@ export { default as Photo } from './Photo';
 export { default as Textarea } from './Textarea';
 export { default as SearchBox } from './SearchBox';
 export { default as ConfirmationButton } from './ConfirmationButton';
+export { default as InputImage } from './InputImage';

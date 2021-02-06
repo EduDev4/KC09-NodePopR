@@ -37,9 +37,7 @@ function App({ initiallyLooggedUserId }) {
           <PrivateRoute path="/adverts" exact>
             <AdvertsPage />
           </PrivateRoute>
-          <PrivateRoute path="/advert/new" exact>
-            <NewAdvertPage />
-          </PrivateRoute>
+          <PrivateRoute path="/advert/new" exact component={NewAdvertPage} />
           <PrivateRoute path="/advert/:advertId" exact component={AdvertPage} />
           <Route path="/login" exact>
             {({ history }) => (

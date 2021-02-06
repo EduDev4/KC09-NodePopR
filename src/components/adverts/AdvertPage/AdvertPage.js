@@ -1,6 +1,5 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import Photo from '../../shared/Photo';
 import Layout from '../../layout';
 import { ConfirmationButton } from '../../shared';
 import { DeleteOutlined } from '@ant-design/icons';
@@ -16,10 +15,11 @@ class AdvertPage extends React.Component {
     error: null,
   };
 
+  getAdvertId = () => this.props.match.params.advertId;
+
   getAdvertDetail = async () => {
     try {
-      const { advertId } = this.props.match.params;
-      const { result } = await getAdvertDetail(advertId);
+      const { result } = await getAdvertDetail(this.getAdvertId());
       console.log(result);
       if (!result) {
         const error = { message: 'Advert not found' };
@@ -32,12 +32,8 @@ class AdvertPage extends React.Component {
   };
 
   handleDelete = () => {
-    const { advertId } = this.props.match.params;
-    deleteAdvert(advertId)
-      .then(() => {
-        this.setState({ advert: 'deleted' });
-      })
-      .catch(error => this.setState({ error }));
+    const { history } = this.props;
+    deleteAdvert(this.getAdvertId()).then(() => history.push('/adverts'));
   };
 
   componentDidMount() {
@@ -46,16 +42,16 @@ class AdvertPage extends React.Component {
 
   renderContent = () => {
     const { advert, error } = this.state;
-
+    console.log(error);
     if (error) {
       return <Redirect to="/404" />;
-    }
-    if (advert && advert === 'deleted') {
-      return <Redirect to="/adverts" />;
     }
     if (!advert) {
       return null;
     }
+
+    const { name, price, tags, sale, photo } = advert;
+
     console.log(advert);
     console.log(placeholder);
     return (
@@ -63,8 +59,8 @@ class AdvertPage extends React.Component {
         <div className="left">
           {
             <Image
-              src={advert.photo ? advert.photo : 'error'}
-              alt={advert.name}
+              src={photo ? photo : 'error'}
+              alt={name}
               width={75}
               height={75}
               fallback={placeholder}
@@ -73,11 +69,19 @@ class AdvertPage extends React.Component {
         </div>
         <div className="right">
           <div className="tweet-header">
-            <span className="advert-name">Name: {advert.name}</span>
-            <span className="tweet-username">{advert.price}</span>
+            <span className="advert-name">Name: {name}</span>
+            <span>
+              <br />
+              Price: {price} €
+            </span>
+            <span>
+              <br />
+              {sale ? '[Sale]' : '[Buying]'}
+              <br />
+            </span>
           </div>
           <div>
-            {advert.tags}
+            Tags: {tags}
             <div className="advert-actions">
               <ConfirmationButton
                 danger

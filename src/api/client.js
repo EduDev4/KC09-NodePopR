@@ -32,19 +32,18 @@ client.logout = () =>
   });
 
 client.interceptors.response.use(
-  response => {
-    console.log(response.data);
-    return response.data;
+  ({ data: { ok, ...result } }) => {
+    if (!ok) {
+      return Promise.reject(result.error);
+    }
+    return Promise.resolve(result);
   },
   error => {
     console.log(error);
     if (!error.response) {
-      return Promise.reject({ message: error.message });
+      return Promise.reject(error);
     }
-    return Promise.reject({
-      message: error.response.statusText,
-      ...error.response.data,
-    });
+    return Promise.reject(error.response.data.error);
   },
 );
 
