@@ -4,6 +4,8 @@ import Photo from '../../shared/Photo';
 import Layout from '../../layout';
 import { ConfirmationButton } from '../../shared';
 import { DeleteOutlined } from '@ant-design/icons';
+import { Image } from 'antd';
+import placeholder from '../../../assets/animatedBox.gif';
 
 import { getAdvertDetail, deleteAdvert } from '../../../api/adverts';
 /* import Layout from '../layout'; */
@@ -54,10 +56,20 @@ class AdvertPage extends React.Component {
     if (!advert) {
       return null;
     }
+    console.log(advert);
+    console.log(placeholder);
     return (
       <article>
         <div className="left">
-          {<Photo src={advert ? advert.photo : ''} className="advert-photo" />}
+          {
+            <Image
+              src={advert.photo ? advert.photo : 'error'}
+              alt={advert.name}
+              width={75}
+              height={75}
+              fallback={placeholder}
+            />
+          }
         </div>
         <div className="right">
           <div className="tweet-header">
