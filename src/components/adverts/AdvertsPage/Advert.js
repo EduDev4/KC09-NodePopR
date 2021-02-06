@@ -1,19 +1,25 @@
 import React from 'react';
 /* import formatDistanceToNow from 'date-fns/formatDistanceToNow'; */
 
-/* import defaultPhoto from '../../assets/default_profile.png'; */
+import { Image } from 'antd';
+import placeholder from '../../../assets/photo-default.png';
 import './Adverts.css';
 
-const Advert = ({ name, price, sale, tags, _id, history }) => (
+const Advert = ({ name, price, photo, sale, tags, _id, history }) => (
   <article key={_id} onClick={() => history.push(`/advert/${_id}`)}>
     <div className="right">
       <div className="advert-header">
         <span className="advert-name">{sale ? 'On Sale' : 'For Buying'}</span>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <div>
+          <Image
+            src={photo ? photo : 'error'}
+            alt={name}
+            width={75}
+            height={75}
+            fallback={placeholder}
+          />
+        </div>
+
         <span className="advert-name">{name}</span>
         <br></br>
         <span className="advert-username">

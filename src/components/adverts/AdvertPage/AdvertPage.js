@@ -5,7 +5,7 @@ import Layout from '../../layout';
 import { ConfirmationButton } from '../../shared';
 import { DeleteOutlined } from '@ant-design/icons';
 import { Image } from 'antd';
-import placeholder from '../../../assets/animatedBox.gif';
+import placeholder from '../../../assets/photo-default.png';
 
 import { getAdvertDetail, deleteAdvert } from '../../../api/adverts';
 /* import Layout from '../layout'; */
