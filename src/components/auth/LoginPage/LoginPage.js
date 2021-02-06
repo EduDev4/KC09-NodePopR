@@ -4,16 +4,14 @@ localStorage los datos de la session de usuario, evitando tener que introducir
 credenciales en cada visita la sitio */
 import React, { useState } from 'react';
 import T from 'prop-types';
+import useForm from '../../../hooks/useForm';
 
-import { login } from '../../api/auth';
-
-import { Button, FormField } from '../shared';
-
-import useForm from '../../hooks/useForm';
+import { login } from '../../../api/auth';
+import { Button, FormField } from '../../shared';
+import storage from '../../../utils/storage';
 
 import './LoginPage.css';
 
-import storage from '../../utils/storage';
 const auth = storage.get('auth') || { email: null, token: null, ok: false };
 
 function LoginPage({ onLogin, history }) {

@@ -4,10 +4,9 @@ import React, { useState } from 'react';
 import T from 'prop-types';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import LoginPage from '../auth/LoginPage';
-import { AdvertPage, AdvertsPage, NewAdvertPage } from '../adverts';
+import { PrivateRoute, LoginPage } from '../auth';
 
-import PrivateRoute from '../auth/PrivateRoute';
+import { AdvertPage, AdvertsPage, NewAdvertPage } from '../adverts';
 import { AuthContextProvider } from '../auth/Context';
 
 function App({ initiallyLooggedUserId }) {

@@ -4,7 +4,7 @@ import React from 'react';
 /* import defaultPhoto from '../../assets/default_profile.png'; */
 import './Adverts.css';
 
-const Advert = ({ name, photo, price, sale, tags, _id, history }) => (
+const Advert = ({ name, price, sale, tags, _id, history }) => (
   <article key={_id} onClick={() => history.push(`/advert/${_id}`)}>
     <div className="right">
       <div className="advert-header">
@@ -31,9 +31,5 @@ const Advert = ({ name, photo, price, sale, tags, _id, history }) => (
     </div>
   </article>
 );
-
-Advert.defaultProps = {
-  content: 'Nothing here!',
-};
 
 export default Advert;
