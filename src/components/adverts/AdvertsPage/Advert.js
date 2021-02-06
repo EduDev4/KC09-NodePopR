@@ -4,6 +4,7 @@ import React from 'react';
 import { Image } from 'antd';
 import placeholder from '../../../assets/photo-default.png';
 import './Adverts.css';
+import Tags from '../Tags';
 
 const Advert = ({ name, price, photo, sale, tags, _id, history }) => (
   <article key={_id} onClick={() => history.push(`/advert/${_id}`)}>
@@ -27,11 +28,7 @@ const Advert = ({ name, price, photo, sale, tags, _id, history }) => (
         </span>
       </div>
       <div>
-        {tags ? (
-          tags.map(tag => <div className="badge">{tag}</div>)
-        ) : (
-          <div className="badge">Untagged</div>
-        )}
+        <Tags tags={tags}></Tags>
         <div className="advert-actions"></div>
       </div>
     </div>

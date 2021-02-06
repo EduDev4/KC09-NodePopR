@@ -90,6 +90,24 @@ function AdvertsPage() {
     if (!adverts) {
       return null;
     }
+    if (!adverts.length) {
+      return (
+        <div>
+          <br />
+          <br />
+          <img
+            alt="X"
+            height="50"
+            height="50"
+            src="https://img.icons8.com/ios/50/000000/filter--v2.gif"
+          />
+          <br />
+          <span>No adverts :(</span>
+          <br />
+          <span>Refine your search</span>
+        </div>
+      );
+    }
     return adverts.map(advert => (
       <Advert key={advert._id} {...advert} history={history} />
     ));

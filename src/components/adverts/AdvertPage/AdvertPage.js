@@ -5,6 +5,7 @@ import { ConfirmationButton } from '../../shared';
 import { DeleteOutlined } from '@ant-design/icons';
 import { Image } from 'antd';
 import placeholder from '../../../assets/photo-default.png';
+import Tags from '../Tags';
 
 import { getAdvertDetail, deleteAdvert } from '../../../api/adverts';
 /* import Layout from '../layout'; */
@@ -81,14 +82,14 @@ class AdvertPage extends React.Component {
             </span>
           </div>
           <div>
-            Tags: {tags}
+            <Tags tags={tags}></Tags>
             <div className="advert-actions">
               <ConfirmationButton
                 danger
                 icon={<DeleteOutlined />}
                 confirmationButtonProps={{
                   title: 'Delete advert?',
-                  content: 'Are you sure you want to delete this advert?',
+                  content: 'This action can not be undone!',
                   okText: 'Yes',
                   cancelText: 'No',
                   okButtonProps: {

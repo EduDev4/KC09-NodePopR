@@ -4,7 +4,7 @@ import './NewAdvertPage.css';
 
 import { InputNumber, Switch, Button, Row, Col, Input } from 'antd';
 import 'antd/dist/antd.css';
-
+import TagSelect from './TagSelect';
 import { InputImage } from '../../shared';
 
 class NewAdvertForm extends React.Component {
@@ -70,6 +70,11 @@ class NewAdvertForm extends React.Component {
               onChange={this.handlePriceChange}
               value={price}
             />
+          </Col>
+        </Row>
+        <Row className="formRow">
+          <Col span={24}>
+            <TagSelect onChange={this.handleTagsChange} value={tags} />
           </Col>
         </Row>
         <Row className="formRow">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select } from 'antd';
 
-import { getTags } from '../../api/adverts';
+import { getTags } from '../../../api/adverts';
 
 const { Option } = Select;
 
