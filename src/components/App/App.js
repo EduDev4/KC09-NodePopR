@@ -5,9 +5,7 @@ import T from 'prop-types';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import LoginPage from '../auth/LoginPage';
-import AdvertsPage from '../adverts/AdvertsPage';
-import AdvertPage from '../adverts/AdvertPage';
-import NewAdvertPage from '../adverts/NewAdvertPage';
+import { AdvertPage, AdvertsPage, NewAdvertPage } from '../adverts';
 
 import PrivateRoute from '../auth/PrivateRoute';
 import { AuthContextProvider } from '../auth/Context';

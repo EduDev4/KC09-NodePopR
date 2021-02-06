@@ -1,11 +1,11 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import Photo from '../shared/Photo';
-import Layout from '../layout';
+import Photo from '../../shared/Photo';
+import Layout from '../../layout';
 
-import Button from '../shared/Button';
+import Button from '../../shared/Button';
 
-import { getAdvertDetail, deleteAdvert } from '../../api/adverts';
+import { getAdvertDetail, deleteAdvert } from '../../../api/adverts';
 /* import Layout from '../layout'; */
 
 class AdvertPage extends React.Component {

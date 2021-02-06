@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { getAdverts, getAdvertsWithFilters } from '../../api/adverts';
-import Layout from '../layout';
+import { getAdverts, getAdvertsWithFilters } from '../../../api/adverts';
+import Layout from '../../layout';
 import Advert from './Advert';
 
-import storage from '../../utils/storage';
+import storage from '../../../utils/storage';
 
 import { Slider, Switch, Button, Row, Col, InputNumber, Input } from 'antd';
 import 'antd/dist/antd.css';

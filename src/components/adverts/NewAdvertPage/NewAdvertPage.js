@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Layout from '../layout';
-import { Photo, Textarea } from '../shared';
+import Layout from '../../layout';
+import { Photo, Textarea } from '../../shared';
 
-import { createAdvert } from '../../api/adverts';
+import { createAdvert } from '../../../api/adverts';
 
 import './NewAdvertPage.css';
 import { Redirect } from 'react-router-dom';
