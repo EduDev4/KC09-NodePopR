@@ -7,6 +7,11 @@ export const getAdverts = () => {
   return client.get(url);
 };
 
+export const getTags = () => {
+  const url = `${apiVersion}/adverts/tags`;
+  return client.get(url);
+};
+
 export const getAdvertsWithFilters = filters => {
   const url = `${apiVersion}/adverts`;
   console.log(url);
